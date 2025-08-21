@@ -1,0 +1,33 @@
+research_task:
+  description: >
+    Identify and retrieve the top 1 most relevant and trending AI Agent research
+    paper as of {date}, focusing on papers published within the last 1 week
+    unless exceptionally impactful or if today's {date} paper are not available. 
+  agent: researcher
+  expected_output: >
+    Return results as a numbered markdown list, each research paper including:
+    - Title
+    - Authors
+    - Publication Date
+    - Venue
+    - Link (direct to paper)
+    - Brief abstract or description
+
+reporting_task:
+  description: >
+    Using the research papers retrieved in the 'research_task', analyze the
+    paper .Summarize its key contributions, methodology, results,limitations, and 
+    suggest possible improvements which could improve the paper from our side.
+  agent: analyst
+  context: [research_task]
+  expected_output: >
+    For each paper, return:
+    1. Paper Title
+    2. Key Contributions
+    3. Methodology Overview
+    4. Key Results
+    5. Limitations
+    6. Suggested Improvements
+    7. How we can help in the more improvements of the paper 
+       published by the author from our side like from you.
+  output_file: output/report.md
